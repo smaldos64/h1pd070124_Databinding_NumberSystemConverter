@@ -125,6 +125,7 @@
                      MinWidth="200" 
                      KeyDown="txtCheckForValidPositiveNumberPressedForRadixSystem" 
                      Tag="16"
+                     CharacterCasing="Upper"
                 />
 
                 <Label Content="--------------------------------------------------------------------------------------" 
