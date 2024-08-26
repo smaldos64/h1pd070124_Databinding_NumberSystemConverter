@@ -1,4 +1,5 @@
-﻿using Databinding_NumberSystemConverter.Constants;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using Databinding_NumberSystemConverter.Constants;
 using System.Media;
 using System.Text;
 using System.Windows;
@@ -11,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ToolsLibrary;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Databinding_NumberSystemConverter
 {

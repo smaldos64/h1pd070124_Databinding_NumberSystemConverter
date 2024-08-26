@@ -9,22 +9,6 @@ using ToolsLibrary;
 
 namespace Databinding_NumberSystemConverter.Constants
 {
-
-    //public struct ValidKeysForNumberInRadixSystems
-    //{
-    //    public Key FirstValidKey;
-    //    public Key SecondValidKey;
-    //    public bool IsKeyALetter;
-
-    //    public ValidKeysForNumberInRadixSystems(Key FirstValidKey, 
-    //                                            Key SecondValidKey,
-    //                                            bool IsKeyALetter)
-    //    {
-    //        this.FirstValidKey = FirstValidKey;
-    //        this.SecondValidKey = SecondValidKey;
-    //        this.IsKeyALetter = IsKeyALetter;
-    //    }
-    //}
     public class Const
     {
         public static readonly int MaxByteValue = 255;

@@ -4,8 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Databinding_NumberSystemConverter"
+        xmlns:other="clr-namespace:Databinding_NumberSystemConverter.Converters"
         mc:Ignorable="d"
         Title="NumberSystemConverter" Height="Auto" Width="1280" Background="Yellow" MinHeight="1020">
+    <Window.Resources>
+        <other:DecimalToFromBinaryConverter x:Key="BinaryConverter" />
+        <other:DecimalToFromOctalConverter x:Key="OctalConverter" />
+        <other:DecimalToFromHexadecimalConverter x:Key="HexadecimalConverter" />
+    </Window.Resources>
+    
     <ScrollViewer VerticalScrollBarVisibility="Auto" Height="Auto" x:Name="srcThisScrollViewer">
         <StackPanel x:Name="stcThisStack">
             <Grid Height="Auto" Width="Auto">
@@ -48,14 +55,15 @@
                      HorizontalAlignment="Left" 
                      Height="23" 
                      TextWrapping="NoWrap"  
-                     Text="" 
+                     Text="{Binding ElementName = txtRadixNumber10, Path = Text, Converter = {StaticResource BinaryConverter}, UpdateSourceTrigger=PropertyChanged}" 
                      VerticalAlignment="Top" 
                      Width="Auto" 
                      Grid.Row="0" 
                      Grid.Column="2"
-                     MinWidth="200" 
+                     MinWidth="220" 
                      KeyDown="txtCheckForValidPositiveNumberPressedForRadixSystem" 
-                     Tag="2"
+                     Tag="2" 
+                     MaxLength="32"
                 />
 
                 <Label Content="Oktal Talsystem (8 tal/cifre) : " 
@@ -71,14 +79,15 @@
                      HorizontalAlignment="Left" 
                      Height="23" 
                      TextWrapping="NoWrap"  
-                     Text="" 
+                     Text="{Binding ElementName = txtRadixNumber10, Path = Text, Converter = {StaticResource OctalConverter}, UpdateSourceTrigger=PropertyChanged}" 
                      VerticalAlignment="Top" 
                      Width="Auto" 
                      Grid.Row="1" 
                      Grid.Column="2"
-                     MinWidth="200" 
+                     MinWidth="220" 
                      KeyDown="txtCheckForValidPositiveNumberPressedForRadixSystem" 
                      Tag="8"
+                     MaxLength="9"
                 />  
 
                 <Label Content="Decimal Talsystem (10 tal/cifre) : " 
@@ -94,14 +103,15 @@
                      HorizontalAlignment="Left" 
                      Height="23" 
                      TextWrapping="NoWrap"  
-                     Text="" 
+                     Text=""
                      VerticalAlignment="Top" 
                      Width="Auto" 
                      Grid.Row="2" 
                      Grid.Column="2"
-                     MinWidth="200" 
+                     MinWidth="220" 
                      KeyDown="txtCheckForValidPositiveNumberPressedForRadixSystem" 
                      Tag="10"
+                     MaxLength="9"
                 />
 
                 <Label Content="Hexadecimal Talsystem (16 tal/cifre) : " 
@@ -117,15 +127,16 @@
                      HorizontalAlignment="Left" 
                      Height="23" 
                      TextWrapping="NoWrap"  
-                     Text="" 
+                     Text="{Binding ElementName = txtRadixNumber10, Path = Text, Converter = {StaticResource HexadecimalConverter}, UpdateSourceTrigger=PropertyChanged}" 
                      VerticalAlignment="Top" 
                      Width="Auto" 
                      Grid.Row="3" 
                      Grid.Column="2"
-                     MinWidth="200" 
+                     MinWidth="220" 
                      KeyDown="txtCheckForValidPositiveNumberPressedForRadixSystem" 
                      Tag="16"
                      CharacterCasing="Upper"
+                     MaxLength="8"
                 />
 
                 <Label Content="--------------------------------------------------------------------------------------" 
@@ -136,7 +147,7 @@
                     Grid.ColumnSpan="2"
                     Grid.Row="4"
                     Tag="16"
-                />  
+                />
             </Grid>
         </StackPanel>
     </ScrollViewer>
